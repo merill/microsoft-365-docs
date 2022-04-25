@@ -163,6 +163,7 @@ Set-MgUserLicense -UserId "belinda@litwareinc.onmicrosoft.com" -AddLicenses $add
 This example assigns **jamesp\@litwareinc.com** with the same licensing plan that has been applied to **belindan\@litwareinc.com**:
 
 ```powershell
+Select-MgProfile -Name beta
 $mgUser = Get-MgUser -UserId "belindan@litwareinc.com"
 Set-MgUserLicense -UserId "jamesp@litwareinc.com" -AddLicenses $mgUser.AssignedLicenses -RemoveLicenses @()
 ```
